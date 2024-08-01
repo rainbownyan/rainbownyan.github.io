@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300">
+<meta charset="utf-8">
+<title>方正县第一中学</title>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    } 
+
+li:last-child {
+    border-right: none;
+}
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: #66CCff;
+    }
+
+    
+    </style>
+</head>
+<body style="margin: 0%;">
+    <div ><ul>
+        <li><a href="#home">主页</a></li>
+        <li><a href="#news">新闻</a></li>
+        <li><a href="#contact">联系</a></li>
+        <li style="float:right"><a href="#about">关于</a></li>
+        </ul></div>
+<div style="background-color: dimgray ;opacity: 0.9;
+text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
+<img src=https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300 height="120px" width="120px"> 
+<h1>方正县第一中学</h1>
+</div>
+<div style=
+"max-width:900px;
+margin:30px auto;
+padding: 30px;">
+    <p><strong>方正县第一中学</strong>创建于1952年，原名<strong>“松江省初级中学”</strong>，1958年正式命名为<strong>“方正县第一中学”</strong>，是全国百强特色学校、全国青少年足球特色示范学校、全国四星级幸福学校、全国特色学校创建科研单位、全国特色示范基地学校、全省教育系统先进集体标兵、全省人民群众满意学校、全省中小学师德先进集体标兵、黑龙江省文明单位、黑龙江省百姓口碑最佳单位、黑龙江省中小学体育艺术教育特色学校、黑龙江省多样化特色化发展实验学校、黑龙江省培养体育艺术后备人才基地学校、黑龙江省国际交流示范学校、哈尔滨市示范性高中、哈尔滨市特色化示范高中。</p>
+</div>
+<div style="background-color: dimgray ;opacity: 0.9;
+text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
+<a href="https://baike.baidu.com/item/%E6%96%B9%E6%AD%A3%E5%8E%BF%E7%AC%AC%E4%B8%80%E4%B8%AD%E5%AD%A6/14435638">
+<p style="color: white;">前往百度百科</p>
+</a>
+</div>
+
+<script>
+    alert("本网页显示内容可能与现实有较大差别，请注意甄别")
+</script>
+</body>
+</html>
