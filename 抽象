@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300">
+<meta charset="utf-8">
+<title>方正县第一中学</title>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    } 
+
+li:last-child {
+    border-right: none;
+}
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: #66CCff;
+    }
+
+    
+    </style>
+</head>
+<body style="margin: 0%;">
+    <div ><ul>
+        <li><a href="#home">傻逼主页</a></li>
+        <li><a href="#news">傻逼新闻</a></li>
+        <li><a href="#contact">联系傻逼</a></li>
+        <li style="float:right"><a href="#about">关于大傻逼</a></li>
+        </ul></div>
+<div style="background-color: dimgray ;opacity: 0.9;
+text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
+<img src=https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300 height="120px" width="120px"> 
+<h1>方正县第一中学</h1>
+</div>
+<div style=
+"max-width:900px;
+margin:30px auto;
+padding: 30px;text-align: center;">
+    <h1>大傻逼</h1>
+</div>
+<div style="background-color: dimgray ;opacity: 0.9;
+text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
+<a href="https://baike.baidu.com/item/%E6%96%B9%E6%AD%A3%E5%8E%BF%E7%AC%AC%E4%B8%80%E4%B8%AD%E5%AD%A6/14435638">
+<p style="color: white;">前往牛魔百科</p>
+</a>
+</div>
+</body>
+</html>
