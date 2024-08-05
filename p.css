@@ -1,0 +1,10 @@
+@media screen and (max-width:599px) {
+    .col{
+        float:none;
+        margin-left: 0;
+        width: auto;
+    }
+    .row{
+        padding: 0 8px;
+    }
+}
