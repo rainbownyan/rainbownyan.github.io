@@ -3,111 +3,215 @@
 <head>
 <link rel="shortcut icon" href="https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>方正县第一中学</title>
-<link rel="stylesheet" href="./p.css">
 <style>
-    ul {
-        list-style-type: none;
+    /* 全局样式 */
+    body {
+        background-color: #eaeaea;
         margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    } 
+        font-family: Verdana, sans-serif;
+    }
+    
+    /* 导航栏样式 */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #edebeb;
+    display: flex; /* 使用flex布局替代float */
+    flex-wrap: wrap; /* 允许在小屏幕换行 */
+}
+
+li {
+    /* 移除float: left */
+    flex: 0 0 auto; /* 不伸缩，不收缩，自动宽度 */
+}
 
 li:last-child {
     border-right: none;
+    margin-left: auto; /* 使最后一个元素右对齐 */
 }
-    li {
-        float: left;
-    }
-    
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    
-    li a:hover {
-        background-color: #66CCff;
-    }
 
-    body 
-{
-	background-image:url('https://img0.baidu.com/it/u=1321377592,3850388772&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=650');
-	background-color:#cccccc;
-    background-repeat:no-repeat;
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+li a:hover {
+    background-color: #ffffff;
+}
+    
+    /* 主要内容容器 */
+    .main-container {
+        margin: 0 auto;
+    }
+    
+    /* 学校标题部分 */
+    .school-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 水平居中 */
+    align-items: center;    /* 垂直居中 */
+    gap: 30px;
+    background-color: dimgray;
+    padding: 100px;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    text-align: center;     /* 文字内容也居中 */
+    background-attachment: fixed;
     background-position: center;
-    background-attachment:fixed;
-}    
-    </style>
-</head>
-<body style="margin: 0%;">
-    <div ><ul>
-        <li><a href="https://rainbownyan.github.io/">主页</a></li>
-        <li><a href="https://rainbownyan.github.io/news/">新闻</a></li>
-        <li><a href="#contact">联系</a></li>
-        <li style="float:right"><a href="https://rainbownyan.github.io/about/">关于</a></li>
-        </ul></div>
-<div style="background-color: dimgray ;opacity: 0.9;
-text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
-<img src=https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300 height="120px" width="120px"> 
-<h1>方正县第一中学</h1>
-<p>为学生的构式人生奠基服务</p>
+    background-size: cover;
+    background-image:url('https://img0.baidu.com/it/u=1321377592,3850388772&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=650') ;
 
-</div>
-<div style=
-"max-width:900px;
-margin:30px auto;
-padding: 30px;text-align: center;background-color: aliceblue ;opacity: 0.9;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid aliceblue;">
-    <h1>大概是学校简介</h1>
-    <p>方正县第一中学创建于114514年，原名“吉吉国初生中学”，1919810年正式命名为“方正县第一中学”，是全国百强哈比下学校、全国牛魔足球特色示范学校、全国四星级不幸福学校、后面忘了。</p>
-</div>
-<div style=
-"max-width:900px;
-margin:30px auto;
-padding: 30px;text-align: center;background-color: aliceblue ;opacity: 0.9;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid aliceblue;">
-    <h1>大概是学校校长：黄金才</h1>
-    <img src="./HJC.jpg" height="200px" width="200px">
-    <p>这咱就不做过多评价了，话说黄校长真的是一个人吗？</p>
-</div>
-<div style=
-"max-width:900px;
-margin:30px auto;
-padding: 30px;text-align: center;background-color: aliceblue ;opacity: 0.9;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid aliceblue;">
-    <h1>大概是优秀学生代表留言</h1>
-    <p>由于涉及学生隐私，本页面不放出学生照片</p>
-    <p><strong>牛自豪 男 比范式小三岁</strong><br>有一说一，这个学校是我所见过最镁濠的学校，我相信我们能够在三年的努力拼搏中考上最好的大专！</p>
-    <p><strong>李田所 男 24岁 高二四班</strong><br>逸一时，误一世。逸久逸久罢逸龄！</p>
-    <p><strong>常素世 女 16岁 一年级A班</strong><br>欧内该！没有冯老师的话！瓦达西！要怎么做才能回来？只要是我能做的，我什么都愿意做！<br>编者吐槽：你这个人，满脑子都只想着自己呢</p>
-</div>
-<div style=
-"max-width:900px;
-margin:30px auto;
-padding: 30px;text-align: center;background-color: aliceblue ;opacity: 0.9;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid aliceblue;">
-    <h1>大概是媒体留言</h1>
-    <h3>二中电波台</h3>
-    <img src="./GO.jpg" height="360px" width="640px">
-    <p>在2024年我们有了无数的精品动画可以选择，比如5大霸权之作鬼马咒卍家，又或是蒜。但还没有一部作品能像方正县第一中学的故事一样给我带来如此般震撼，这实在是太摇滚了。虽然台长不想承认，但这就是事实，所以台长再次隆重宣布！方正一中不如兽娘动物园2！</p>
-    <h3>假探唐人劫</h3>
-    <p>探店铸币多，真假道理说。方正一中撤硕，仨人，没花钱。<br>柿孬茄子，0元。 一进嘴先是一个咸鲜的口，然后又带着苦和辣，一回味还有点维维的甜。这师傅处理的也挺好，一点异味没有。师傅手法可以真的。<br>爆炒饵蚕 0元 嗯，一进嘴先是维维的苦，但后来越嚼越香越嚼越香，这菜师傅没给调太重的口，只是略微有点小咸味，并没有盖住食材原本的香味。这菜不错！<br>出来了啊，他们家的确是一个很有特色的餐厅啊。这趟没白来。</p>
-</div>
-<div style=
-"max-width:900px;
-margin:30px auto;
-padding: 30px;text-align: center;background-color: aliceblue ;opacity: 0.9;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid aliceblue;">
-    <h1>大概是特邀嘉宾留言</h1>
-    <img src="https://www.danmuxiu.cn/uploads/allimg/220426/1-22042622412D38.jpg" height="250px" width="200px">
-    <h3>刀哥</h3>
-    <p>方正一中没有活了！拉跨了！呜呜呜！还不如我这个...尕娃！呜呜呜！没有活谁给你刷礼物啊！呜呜呜！</p>
-</div>
-<div style="background-color: dimgray ;opacity: 0.9;
-text-align: center;padding: 50px;font-family:verdana;padding:20px;border-radius:10px;border:10px solid dimgrey;">
-<a href="https://baike.baidu.com/item/%E6%96%B9%E6%AD%A3%E5%8E%BF%E7%AC%AC%E4%B8%80%E4%B8%AD%E5%AD%A6/14435638">
-<p style="color: white;">前往牛魔百科</p>
-</a>
-<p style="color: white;">本网页仅供娱乐喵~</p>
-</div>
+}
+
+/* 小屏幕时垂直排列并居中 */
+@media (max-width: 768px) {
+    .school-header {
+        flex-direction: column;
+    }
+}
+
+/* 图片样式 */
+.school-header img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* 文字内容容器 */
+.school-header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 文字内容居中 */
+}
+    
+    /* 内容卡片通用样式 */
+    .content-card {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        text-align: center;
+        background-color: aliceblue;
+        opacity: 0.9;
+        border-radius: 10px;
+        border: 10px solid aliceblue;
+    }
+    
+    /* 媒体部分特殊样式 */
+    .media-section img {
+        max-width: 100%;
+        height: auto;
+        margin: 15px 0;
+    }
+    
+    /* 页脚样式 */
+    footer {
+        background-color: dimgray;
+        opacity: 0.9;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+    
+    footer p {
+        color: white;
+        margin: 10px 0;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .school-header {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .content-card {
+            padding: 20px;
+            margin: 20px auto;
+        }
+        
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rainbownyan.github.io/">主页</a></li>
+                <li><a href="https://rainbownyan.github.io/news/">新闻</a></li>
+                <li><a href="#contact">联系</a></li>
+                <li style="float:right"><a href="https://rainbownyan.github.io/about/">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <!-- 学校标题部分 -->
+        <div class="school-header">
+            <img src="https://pic.baike.soso.com/ugc/baikepic2/0/20221016105054-1684619894_jpeg_457_479_145766.jpg/300" alt="方正县第一中学标志">
+            <div class="school-header-content">
+                <h1 style="color: #ffffff;">方正县第一中学</h1>
+                <p>为学生的构式人生奠基服务</p>
+            </div>
+        </div>
+        
+        <!-- 学校简介 -->
+        <div class="content-card">
+            <h1>学校简介</h1>
+            <p>方正县第一中学创建于114514年，原名"吉吉国初生中学"，1919810年正式命名为"方正县第一中学"，是全国百强哈比下学校、全国牛魔足球特色示范学校、全国四星级不幸福学校。</p>
+        </div>
+        
+        <!-- 校长介绍 -->
+        <div class="content-card">
+            <h1>学校校长：黄金才</h1>
+            <img src="./HJC.jpg" alt="黄金才校长" style="max-width:200px; height:auto;">
+            <p>这咱就不做过多评价了，话说黄校长真的是一个人吗？</p>
+        </div>
+        
+        <!-- 优秀学生代表 -->
+        <div class="content-card">
+            <h1>优秀学生代表留言</h1>
+            <p>由于涉及学生隐私，本页面不放出学生照片</p>
+            <p><strong>牛自豪 男 比范式小三岁</strong><br>有一说一，这个学校是我所见过最镁濠的学校，我相信我们能够在三年的努力拼搏中考上最好的大专！</p>
+            <p><strong>李田所 男 24岁 高二四班</strong><br>逸一时，误一世。逸久逸久罢逸龄！</p>
+            <p><strong>常素世 女 16岁 一年级A班</strong><br>感觉不如划小船。</p>
+        </div>
+        
+        <!-- 媒体留言 -->
+        <div class="content-card media-section">
+            <h1>媒体留言</h1>
+            <h3>二中电波台</h3>
+            <img src="./GO.jpg" alt="二中电波台">
+            <p>在2024年我们有了无数的精品动画可以选择，比如5大霸权之作鬼马咒卍家，又或是蒜。但还没有一部作品能像方正县第一中学的故事一样给我带来如此般震撼，这实在是太摇滚了。虽然台长不想承认，但这就是事实，所以台长再次隆重宣布！方正一中不如兽娘动物园2！</p>
+            <h3>假探唐人劫</h3>
+            <p>探店铸币多，真假道理说。方正一中撤硕，仨人，没花钱。<br>柿孬茄子，0元。 一进嘴先是一个咸鲜的口，然后又带着苦和辣，一回味还有点维维的甜。这师傅处理的也挺好，一点异味没有。师傅手法可以真的。<br>爆炒饵蚕 0元 嗯，一进嘴先是维维的苦，但后来越嚼越香越嚼越香，这菜师傅没给调太重的口，只是略微有点小咸味，并没有盖住食材原本的香味。这菜不错！<br>出来了啊，他们家的确是一个很有特色的餐厅啊。这趟没白来。</p>
+        </div>
+        
+        <!-- 特邀嘉宾 -->
+        <div class="content-card">
+            <h1>特邀嘉宾留言</h1>
+            <img src="https://www.danmuxiu.cn/uploads/allimg/220426/1-22042622412D38.jpg" alt="刀哥" style="max-width:200px; height:auto;">
+            <h3>刀哥</h3>
+            <p>方正一中没有活了！拉跨了！呜呜呜！还不如我这个...尕娃！呜呜呜！没有活谁给你刷礼物啊！呜呜呜！</p>
+            <img src="./saki.jpg">
+            <h3>丰川祥子</h3>
+            <p>是的孩子们，从月之森退学后我去了方正一中，毕业后直接当客服了。</p>
+        </div>
+    </main>
+    
+    <footer>
+        <a href="https://baike.baidu.com/item/%E6%96%B9%E6%AD%A3%E5%8E%BF%E7%AC%AC%E4%B8%80%E4%B8%AD%E5%AD%A6/14435638">
+            <p>前往牛魔百科</p>
+        </a>
+        <p>本网页仅供娱乐喵~</p>
+    </footer>
 </body>
 </html>
