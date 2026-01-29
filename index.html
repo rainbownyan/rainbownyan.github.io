@@ -139,6 +139,53 @@ li a:hover {
         }
         
     }
+    
+    /* 新增趣味元素样式 */
+    .fun-button {
+        padding: 12px 24px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .fun-button:hover {
+        background-color: #45a049;
+    }
+    
+    .gold-quote {
+        background-color: #fffacd !important;
+        border-color: #ffd700 !important;
+    }
+    
+    .phone-counter {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+    }
+    
+    .rating-box {
+        background-color: #f0f8ff !important;
+    }
+    
+    .song-player {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .big-number {
+        font-size: 48px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    
+    .star-rating {
+        color: #FFD700;
+        font-size: 24px;
+    }
 </style>
 </head>
 <body>
@@ -164,20 +211,34 @@ li a:hover {
                 <p>为学生的构式人生奠基服务</p>
             </div>
         </div>
-        
+
         <!-- 学校简介 -->
         <div class="content-card">
             <h1>学校简介</h1>
             <p>方正县第一中学创建于114514年，原名"吉吉国初生中学"，1919810年正式命名为"方正县第一中学"，是全国百强哈比下学校、全国牛魔足球特色示范学校、全国四星级幸福学校。后面忘了。</p>
-            
         </div>
         
         <!-- 校长介绍 -->
-        <div class="content-card">
+        <div class="content-card gold-quote">
             <h1>学校校长：黄金才</h1>
             <p>这咱就不做过多评价了，话说黄校长真的是一个人吗？</p>
+            <button class="fun-button" onclick="generateQuote()">点击生成校长金句</button>
+            <p id="quoteDisplay" style="margin-top: 20px; font-style: italic; color: #8B4513; font-size: 18px; min-height: 60px;"></p>
         </div>
         
+        <!-- ========== 新增：手机没收计数器 ========== -->
+        <div class="content-card phone-counter">
+            <h1>📱 本周手机没收统计</h1>
+            <div class="big-number" id="phoneCount">上交你的手机来查看没收数</div>
+            <p>部手机正在教导处"休假"</p>
+            <button class="fun-button" onclick="confiscatePhone()" style="background: white; color: #764ba2;">
+                😱 不好！我的手机也被发现了！
+            </button>
+            <p id="confiscateMsg" style="margin-top: 10px; font-size: 14px;"></p>
+        </div>
+        
+        
+       
         <!-- 优秀学生代表 -->
         <div class="content-card">
             <h1>优秀学生代表留言</h1>
@@ -185,6 +246,15 @@ li a:hover {
             <p><strong>牛自豪 男 比范式小三岁</strong><br>有一说一，这个学校是我所见过最镁濠的学校，我相信我们能够在三年的努力拼搏中考上最好的大专！</p>
             <p><strong>李田所 男 24岁 高二四班</strong><br>逸一时，误一世。逸久逸久罢逸龄！</p>
             <p><strong>常素世 女 16岁 一年级A班</strong><br>感觉不如划小船。</p>
+        </div>
+        
+        <!-- ========== 新增：校歌播放器 ========== -->
+        <div class="content-card song-player">
+            <h1>🎵 点击播放方正一中校歌</h1>
+            <button class="fun-button" onclick="playSchoolSong()" style="padding: 15px 30px; font-size: 18px; background-color: #E91E63;">
+                ▶️ 播放正能量校歌
+            </button>
+            <p id="songStatus" style="margin-top: 15px; color: #666; min-height: 80px;"></p>
         </div>
         
         <!-- 媒体留言 -->
@@ -209,11 +279,335 @@ li a:hover {
         </div>
     </main>
     
+    <!-- ========== 新增：彩蛋按钮 ========== -->
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="showEasterEgg()" style="background: transparent; border: 1px dashed #ccc; padding: 8px 16px; color: #666; border-radius: 5px; cursor: pointer;">
+            🥚 点击查看开发者留言
+        </button>
+        <div id="easterEgg" style="display: none; margin: 15px auto; padding: 20px; background: #f9f9f9; border-radius: 10px; max-width: 600px; text-align: left;">
+            <p style="font-weight: bold; color: #333;">👨‍💻 开发者说：</p>
+            <p>"因为写网站的是个大懒逼，所以自从2025年起，本站的绝大多数内容都是ai帮忙做的，ai大模型牛逼，JavaScript相关内容原创度达到了惊人的0%!!!!!(包括这个东西)"</p>
+            <button onclick="hideEasterEgg()" style="margin-top: 10px; padding: 5px 15px; background: #ccc; border: none; border-radius: 3px;">🙈 点我藏起来</button>
+        </div>
+    </div>
+    
     <footer>
         <a href="https://baike.baidu.com/item/%E6%96%B9%E6%AD%A3%E5%8E%BF%E7%AC%AC%E4%B8%80%E4%B8%AD%E5%AD%A6/14435638">
             <p>前往百度百科（正史）</p>
         </a>
         <p>本网页仅供娱乐喵~</p>
     </footer>
+
+    <script>
+        const quotes = [
+            "这个食堂啊...还得是...那个...再研究研究",
+            "同学们，我说三点...第一点...第二点...第三点...（半小时后）啊对了还有第四点",
+            "最近有些同学反映...啊这个...我简单讲两句...",
+            "教学质量要提升，但也要注意...嗯...那个...",
+            "这个问题很复杂，我们要辩证地看...",
+            "今天天气不错，啊这个...我简单补充几句...",
+            "同学们要有远大的理想...啊...比如...呃...",
+            "这个手机问题啊...我们既要...又要...还要..."
+        ];
+        
+        function generateQuote() {
+            const display = document.getElementById('quoteDisplay');
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            display.innerHTML = `"${randomQuote}"`;
+            
+            // 添加一点动画效果
+            display.style.opacity = "0";
+            setTimeout(() => {
+                display.style.transition = "opacity 0.5s";
+                display.style.opacity = "1";
+            }, 10);
+        }
+        
+        let phoneCount = Math.floor(Math.random() * 10000) + 10000; 
+        
+        function confiscatePhone() {
+            phoneCount++;
+            document.getElementById('phoneCount').textContent = phoneCount;
+            
+            const messages = [
+                "你的手机正在和校长的诺基亚一起斗地主",
+                "教导主任给手机贴上了'寒假再见'的标签",
+                "好消息：手机可以免费用学校WiFi<br>坏消息：WiFi密码只有校长知道",
+                "手机表示：这比我主人上课睡觉还无聊",
+                "教导主任说：毕业典礼时还你（如果能毕业的话）",
+                "手机已被安排与黄校长语录一起循环播放"
+            ];
+            
+            const msg = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('confiscateMsg').innerHTML = `💡 ${msg}`;
+            
+            // 震动效果
+            const counter = document.getElementById('phoneCount');
+            counter.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                counter.style.transform = "scale(1)";
+                counter.style.transition = "transform 0.3s";
+            }, 300);
+        }
+        
+        
+        function playSchoolSong() {
+            const status = document.getElementById('songStatus');
+            status.innerHTML = "🎵 正在连接校园广播系统...";
+            
+            setTimeout(() => {
+                const songs = [
+                    {name: "《团结就是力量》", chance: 0.3, desc: "经典校园正能量"},
+                    {name: "《运动员进行曲》", chance: 0.3, desc: "课间操必备曲目"},
+                    {name: "《阳光彩虹小白马》", chance: 0.2, desc: "大家都爱的内个时尚歌曲"},
+                    {name: "《unravel》东京喰种OP", chance: 0.15, desc: "二次元同学偷偷点的"},
+                    {name: "《我在东北玩泥巴》", chance: 0.05, desc: "来自食堂师傅的点歌"}
+                ];
+                
+                let random = Math.random();
+                let cumulative = 0;
+                let selectedSong = songs[0];
+                
+                for (let song of songs) {
+                    cumulative += song.chance;
+                    if (random <= cumulative) {
+                        selectedSong = song;
+                        break;
+                    }
+                }
+                
+                status.innerHTML = `🎧 正在播放：<strong>${selectedSong.name}</strong><br>
+                <small>${selectedSong.desc}</small><br>
+                <em>（音量调小！可能会被隔壁班听到）</em>`;
+                
+                // 特殊歌曲效果
+                if (selectedSong.name.includes("泥巴") || selectedSong.name.includes("unravel")|| selectedSong.name.includes("白马")) {
+                    setTimeout(() => {
+                        status.innerHTML += '<br><span style="color:red">⚠️ 教导主任正在赶来...</span>';
+                        setTimeout(() => {
+                            status.innerHTML += '<br><span style="color:blue">🏃 快切歌！</span>';
+                            setTimeout(() => {
+                                status.innerHTML += '<br><span style="color:red">😡 你完了！</span>';
+                                setTimeout(() => {
+                    showFullScreenAlert();
+                }, 500);
+                            }, 1500);
+                        }, 1500);
+                    }, 2000);
+                }
+                
+                // 播放动画
+                status.style.backgroundColor = "#f5f5f5";
+                status.style.padding = "10px";
+                status.style.borderRadius = "5px";
+                status.style.transition = "all 0.3s";
+            }, 1000);
+        }
+        
+        // ========== 彩蛋功能 ==========
+        function showEasterEgg() {
+            const egg = document.getElementById('easterEgg');
+            egg.style.display = "block";
+            egg.style.opacity = "0";
+            
+            setTimeout(() => {
+                egg.style.transition = "opacity 0.5s";
+                egg.style.opacity = "1";
+            }, 10);
+        }
+        
+        function hideEasterEgg() {
+            const egg = document.getElementById('easterEgg');
+            egg.style.opacity = "0";
+            setTimeout(() => {
+                egg.style.display = "none";
+            }, 500);
+        }
+        function showFullScreenAlert() {
+    // 创建全屏遮罩
+    const fullScreenAlert = document.createElement('div');
+    fullScreenAlert.id = 'fullScreenAlert';
+    fullScreenAlert.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff0000, #ff6b6b, #ff0000);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            animation: alertPulse 0.8s infinite alternate;
+        ">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; text-shadow: 3px 3px 0 #000;">🚨 紧急情况！🚨</h1>
+            <p style="font-size: 2rem; margin-bottom: 10px;">教导主任已锁定本页面！</p>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">立即切歌！否则扣班级分！</p>
+            <div style="font-size: 4rem; animation: shake 0.5s infinite;">
+                ⏸️ 🔊 ⏹️
+            </div>
+            <p style="margin-top: 30px; font-size: 1.2rem; opacity: 0.9;">
+                剩余时间：<span id="countdown">5</span>秒
+            </p>
+            <button onclick="alert('你捡了条命😡');closeFullScreenAlert()" style="
+                margin-top: 40px;
+                padding: 15px 30px;
+                font-size: 1.2rem;
+                background: white;
+                color: red;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-weight: bold;
+            ">
+                😨 我错了！马上切歌！
+            </button>
+        </div>
+    `;
+    
+    // 添加到页面
+    document.body.appendChild(fullScreenAlert);
+    
+    // 添加CSS动画
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes alertPulse {
+            0% { background: linear-gradient(45deg, #ff0000, #ff6b6b); }
+            100% { background: linear-gradient(45deg, #ff6b6b, #ff0000); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // 倒计时
+    let countdown = 5;
+    const countdownElement = document.getElementById('countdown');
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+        
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            // 时间到，自动关闭并显示"后果"
+            closeFullScreenAlert();
+            showPunishment();
+        }
+    }, 1000);
+    
+    // 全局变量存储倒计时
+    window.alertCountdown = countdownInterval;
+}
+
+// 关闭全屏警告
+function closeFullScreenAlert() {
+    const alert = document.getElementById('fullScreenAlert');
+    if (alert) {
+        // 先停止动画
+        if (window.alertCountdown) {
+            clearInterval(window.alertCountdown);
+        }
+        
+        // 添加关闭动画
+        alert.style.animation = 'none';
+        alert.style.opacity = '0';
+        alert.style.transition = 'opacity 0.5s';
+        
+        setTimeout(() => {
+            alert.remove();
+        }, 500);
+    }
+}
+
+// 惩罚页面（如果超时）
+function showPunishment() {
+    setTimeout(() => {
+        const punishment = document.createElement('div');
+        punishment.id = 'punishmentScreen';
+        punishment.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: #000;
+                z-index: 10000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-family: monospace;
+                text-align: center;
+            ">
+                <h1 style="color: red; font-size: 2.5rem;">💀 处 罚 通 知 💀</h1>
+                <div style="
+                    border: 3px solid red;
+                    padding: 20px;
+                    margin: 20px;
+                    max-width: 600px;
+                    background: #222;
+                ">
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
+                        因在校期间播放违禁歌曲<br>
+                        且未在规定时间内切歌<br>
+                        现做出以下处罚：<br><br>
+                         写5000字检查<br>
+                         打扫厕所一周<br>
+                         手机没收至毕业<br>
+                         通知家长<br><br>
+                        <span style="color: #ff9999;">
+                            方正县第一中学学生处
+                        </span>
+                    </p>
+                </div>
+                <button onclick="alert('别上网了，赶紧去学习！');closeWindowNow()" style="
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    background: #333;
+                    color: white;
+                    border: 1px solid #666;
+                    cursor: pointer;
+                ">
+                    我接受处罚（只能接受）
+                </button>
+            </div>
+        `;
+        document.body.appendChild(punishment);
+    }, 500);
+}
+function closeWindowNow() {
+    window.close();}
+
+function closePunishment() {
+    const punishment = document.getElementById('punishmentScreen');
+    if (punishment) {
+        punishment.remove();
+    }
+}
+        
+        // 页面加载时初始化
+        window.onload = function() {
+            // 自动生成第一条语录
+            generateQuote();
+            
+            // 为所有外部链接添加安全属性
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                if (!link.href.includes(window.location.hostname)) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            });
+        };
+    </script>
 </body>
 </html>
